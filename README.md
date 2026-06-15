@@ -9,10 +9,20 @@ Este proyecto demuestra la construcción de un Data Warehouse moderno desde cero
 
 El objetivo del proyecto es la implementación de un Esquema Estrella (Star Schema) utilizando datos simulados de una aerolínea, aplicando técnicas de modelado dimensional, rastreo de cambios históricos (SCD), y configurando las capas de rendimiento y gobernanza de Databricks.
 
-🏗️ Arquitectura del Modelo de Datos (Star Schema)
+## 🏗️ Arquitectura del Modelo de Datos (Star Schema)
+
 El diseño central de este proyecto separa los datos transaccionales (Hechos) de los datos descriptivos (Dimensiones), optimizando las consultas analíticas y evitando la redundancia.
 
-
+  ┌─────────────────────┐                  ┌─────────────────────────┐                  ┌─────────────────┐
+  │   DIM PASSENGERS    │                  │      FACT_BOOKINGS      │                  │   DIM AIRPORTS  │
+  ├─────────────────────┤                  ├─────────────────────────┤                  ├─────────────────┤
+  │ PK: passenger_id    │                  │ FK: passenger_id        │                  │ PK: airport_id  │
+  │ name                │   ────────▶     │ FK: airport_id          │     ◀────────   │ city            │
+  │ gender              │                  │ FK: flight_id           │                  │ country         │
+  │ nationality         │                  │ PK: booking_id          │                  └─────────────────┘
+  └─────────────────────┘                  │ amount                  │
+                                           │ booking_date            │
+                                           └─────────────────────────┘
 
 ![image]()
 
