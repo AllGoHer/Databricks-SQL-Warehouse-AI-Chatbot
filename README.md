@@ -240,8 +240,11 @@ Ahora regresamos a catálogos y desplegamos sql_warehouse y seleccionamos stg, d
 
 Y ahí subimos los siguientes 3 archivos.
 
+
 •	Table fact_bookings.
+
 •	Tabla dim_airports.
+
 •	Tabla dim_passengers.
 
 
