@@ -109,7 +109,7 @@ Luego desplegamos la pestaña default y escogemos storage (stg)
 
 Luego creamos una tabla y la ejecutamos
 
-	Código:
+Código:
  
         CREATE TABLE products
         (
