@@ -229,7 +229,8 @@ Luego regresamos a la pestaña de query snippet y con tan solo escribir case se 
 
 ![image](https://github.com/user-attachments/assets/f77b7676-fab8-4f55-8c1f-4e4f84e2321f)
 
-**BACKBONE**
+
+### **BACKBONE**
 
 Ahora regresamos a catálogos y desplegamos sql_warehouse y seleccionamos stg, dentro del panel hacemos click en crear y, en la ventana emergente hacemos click en Table.
 
