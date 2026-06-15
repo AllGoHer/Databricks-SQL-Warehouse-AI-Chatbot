@@ -2,21 +2,24 @@
 
 ![image](https://github.com/user-attachments/assets/efa59c46-985c-46d8-bbfa-39449d18621d)  ![image](https://github.com/user-attachments/assets/d2bed958-3f73-4ae7-817d-afe5168d68ff)
 
-
+________________________________________________________________________________________________________________________________________________________________________________________________________________
 ## 🎯 Descripción del Proyecto
+________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 Este proyecto demuestra la construcción de un Data Warehouse moderno desde cero utilizando Databricks SQL Warehouse. En lugar de escribir pipelines ETL complejos en Python, se adopta el paradigma ELT (Extract, Load, Transform), donde los datos crudos se cargan primero y las transformaciones ocurren directamente en el motor SQL del Warehouse.
 
 El objetivo del proyecto es la implementación de un Esquema Estrella (Star Schema) utilizando datos simulados de una aerolínea, aplicando técnicas de modelado dimensional, rastreo de cambios históricos (SCD), y configurando las capas de rendimiento y gobernanza de Databricks.
 
+________________________________________________________________________________________________________________________________________________________________________________________________________________
 ## 🏗️ Arquitectura del Modelo de Datos (Star Schema)
+________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 El diseño central de este proyecto separa los datos transaccionales (Hechos) de los datos descriptivos (Dimensiones), optimizando las consultas analíticas y evitando la redundancia.
 
 
 ![image](https://github.com/user-attachments/assets/f39a0677-b67d-49e9-b394-176c91a4303a)
 
-🧠 **Cómo leer este diagrama (La regla del 1 a Muchos)**
+ **Cómo leer este diagrama (La regla del 1 a Muchos)**
 
 La magia del Star Schema es que separa los datos en dos tipos de tablas:
 
@@ -33,8 +36,17 @@ Representa un evento o transacción del negocio. Son datos numéricos que cambia
 Tabla FACT_BOOKINGS: Aquí guardas que el pasajero P0001 compró un vuelo en el aeropuerto A001 por $850.
 Las flechas (FK - Foreign Keys): En lugar de escribir "Juan Pérez" en la tabla de hechos, solo guardas el ID (P0001). Esto evita duplicar nombres largos y ahorra millones en costos de almacenamiento y procesamiento en la nube.
 
+📊 Diccionario de Datos (Data Dictionary)
+
+| Tabla | Tipo | Clave Primaria (PK) | Descripción del Negocio |
+| :--- | :--- | :--- | :--- |
+| **dim_airports** | Dimensión | `airport_id` | Catálogo maestro de aeropuertos, ubicación y país. |
+| **dim_passengers** | Dimensión | `passenger_id` | Perfil demográfico de los pasajeros de la aerolínea. |
+| **fact_bookings** | Hecho | `booking_id` | Tabla transaccional. Registra cada reserva con su monto, fecha y las claves foráneas. |
+
+
 ________________________________________________________________________________________________________________________________________________________________________________________________________________
-🧠 Habilidades de Ingeniería de Datos Demostradas
+## 🧠 Habilidades de Ingeniería de Datos Demostradas
 ________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 Este proyecto no es solo "escribir SELECTs". Abarca el ciclo de vida completo del Data Warehousing moderno:
