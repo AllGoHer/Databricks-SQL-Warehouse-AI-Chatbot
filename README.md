@@ -271,6 +271,7 @@ Código:
 ![image](https://github.com/user-attachments/assets/7234b037-e000-4c56-ab1a-19f5ba9c2e18)
 
 Ahora hacemos la consulta.
+
 Código:
 
         SELECT * FROM sql_warehouse.stg.strean_passengers
