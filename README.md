@@ -13,22 +13,18 @@ El objetivo del proyecto es la implementación de un Esquema Estrella (Star Sche
 
 El diseño central de este proyecto separa los datos transaccionales (Hechos) de los datos descriptivos (Dimensiones), optimizando las consultas analíticas y evitando la redundancia.
 
+
+![image](https://github.com/user-attachments/assets/f39a0677-b67d-49e9-b394-176c91a4303a)
+
+
   ┌─────────────────────┐                  ┌─────────────────────────┐                  ┌─────────────────┐
-  
   │   DIM PASSENGERS    │                  │      FACT_BOOKINGS      │                  │   DIM AIRPORTS  │
-  
   ├─────────────────────┤                  ├─────────────────────────┤                  ├─────────────────┤
-  
-  │ PK: passenger_id    │                  │ FK: passenger_id        │                  │ PK: airport_id  │
-  
-  │ name                │   ────────▶     │ FK: airport_id          │     ◀────────    │ city            │
-  
+  │ PK: passenger_id    │  ────────▶      │ FK: passenger_id        │                  │ PK: airport_id  │
+  │ name                │                  │ FK: airport_id          │     ◀────────   │ city            │
   │ gender              │                  │ FK: flight_id           │                  │ country         │
-  
   │ nationality         │                  │ PK: booking_id          │                  └─────────────────┘
-  
   └─────────────────────┘                  │ amount                  │
-  
                                            │ booking_date            │
                                            └─────────────────────────┘
 
