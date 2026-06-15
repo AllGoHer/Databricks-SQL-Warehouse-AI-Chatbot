@@ -36,7 +36,7 @@ Representa un evento o transacción del negocio. Son datos numéricos que cambia
 Tabla FACT_BOOKINGS: Aquí guardas que el pasajero P0001 compró un vuelo en el aeropuerto A001 por $850.
 Las flechas (FK - Foreign Keys): En lugar de escribir "Juan Pérez" en la tabla de hechos, solo guardas el ID (P0001). Esto evita duplicar nombres largos y ahorra millones en costos de almacenamiento y procesamiento en la nube.
 
-📊 Diccionario de Datos (Data Dictionary)
+### 📊 Diccionario de Datos (Data Dictionary)
 
 | Tabla | Tipo | Clave Primaria (PK) | Descripción del Negocio |
 | :--- | :--- | :--- | :--- |
